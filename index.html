@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <br>
+        <title>wind turbine</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+                src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <div class="container">
+            <h1>A New Design of an Optimized Wind Turbine </h1>
+            <h3> A simulation program was created to obtain the design parameters of a wind turbine with optimized 
+                performance and a three blade wind turbine with optimized performance was designed. The power coefficient
+                of the new design is 0.3958.
+                
+                <hr style="height:2px;border-width:0;color:white;background-color:white">
+            </h3>
+        </div>
+    </head>
+    
+    <body>
+         <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <h4>
+                Motivation:
+               <ul>
+                   <li>Wind energy is a useful alternative energy source </li>
+                   <li>Most commercially available wind turbines have low power coefficients</li>
+                   <li>Wind conditions are different at different locations. Customized designs are 
+                       necessary for each location.
+                    </li>
+               </ul>
+                </h4>
+         
+              <br>
+              <hr style="height:2px;border-width:0;color:white;background-color:white">
+            </div>
+            
+            <div class="col-sm-1"></div> 
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-1"></div> 
+            <div class="col-sm-6">
+            <h4>
+                Theory:
+                <br>
+                Under the ideal conditions, it can be shown that the maximum Power Coefficient (Cp) of a 
+                wind turbine is 0.5926. This value is knwon as the Betz limit. Because of the Betz limit, 
+                the maximum energy extracted from the wind is limited to 59.3%. The power coefficient (Cp)
+                reaches the Betz limit when the Axial Indiuction Factor (a) is 0.33.
+                \[ C_p = \frac{\text{power extracted}} {\text{power in the wind}} = 4a(1-a)^2 \] 
+
+                <br>
+                For practical wind turbines the following factors need to be considered.
+            <ul>
+            <li> Wake Rotation</li>
+            <li> Finite # of blades</li>
+            <li> Drag force</li>
+            <li>Tip losses</li>
+             </ul>
+
+            </h4>
+            <br>
+          
+            </div>
+            <div class="col-sm-4">
+                <img src="axial_induction_factor.png" Hspace="1" Vspace="50" alt="" style="width:100%" margin-top:10px 
+                margin-bottom:10px class="img-thumbnail">
+                <img src="cp_curve.png" Hspace="1" Vspace="50" alt="" style="width:100%" margin-top:10px 
+                margin-bottom:10px class="img-thumbnail">
+            </div>
+            <div class="col-sm-1"></div> 
+        </div> 
+
+        <div class="row">
+            <div class="col-sm-1"></div> 
+            <div class="col-sm-10">
+            <h4>
+              Blade Element- Momentum Theory:
+              <img src="cp1.png" Hspace="1" Vspace="10" alt="" style="width:100%" margin-top:10px 
+              margin-bottom:10px class="img-thumbnail">
+            </h4>
+            <br>
+           
+            </div>
+            <div class="col-sm-1"></div> 
+        </div> 
+
+        <div class="row">
+            <div class="col-sm-1"></div> 
+            <div class="col-sm-6">
+            <h4>
+            \[ \lambda  - \text{tip speed ratio}\] 
+            \[ \lambda_r  - \text{local tip speed ratio}\] 
+            \[ \Psi  - \text{local tip speed ratio}\] 
+            \[ C_d  - \text{drag coefficient}\] 
+            \[ C_l  - \text{lift coefficient}\]
+            \[ F  - \text{tip loss factor}\]
+
+            </h4>
+            <br>
+           
+            </div>
+            <div class="col-sm-4">
+                <img src="R.png" Hspace="1" Vspace="10" alt="" style="width:100%" margin-top:10px 
+              margin-bottom:10px class="img-thumbnail">
+             
+            </div> 
+            <hr style="height:2px;border-width:0;color:white;background-color:white">
+            <div class="col-sm-1"></div> 
+        </div> 
+
+        <div class="row">
+            <div class="col-sm-1"></div> 
+            <div class="col-sm-10">
+            <h4>
+               Method:
+               <ul>
+                   <li>Divided the blade into n sections of equal width</li>
+                    <li> the parametes used are angle of attack (&#945) =5.5<sup>0</sup>,
+                    C<sub>d</sub>= 0.02338, C<sub>l</sub>= 0.6206 and Renolds number (R) = 50,000</li>
+                    <li>Repeated for each section</li>
+                    <li>A three blade tubine was choosen since it is the most common type with the 
+                        tip speed ratio 7.</li>
+                    <li> The airfoil shape used was NACA 0012</li>
+                    <li>Monte Carlo simulation mehtod was used to generate large number of &#936<sub>i</sub><sup>s</sup> and calculated the 
+                        C<sub>pi</sub> for each &#936<sub>i</sub>
+                    <li>Summed over all sections</li>
+               </ul>
+               <img src="cp2.png" Hspace="1" Vspace="10" alt="" style="width:100%" margin-top:10px 
+              margin-bottom:10px class="img-thumbnail">
+            </h4>
+            <hr style="height:2px;border-width:0;color:white;background-color:white">
+            </div>
+            <div class="col-sm-1"></div> 
+        </div> 
+       
+        <div class="row">
+            <div class="col-sm-1"></div> 
+            <div class="col-sm-10">
+            <h4>
+                <br>
+               Results and Observations:
+               <br>
+               The contribution to the power coefficinet from the elements near the hub and the tip are 
+               very low. Most of the enegy is exptracted from the region where r/R is between 0.7 - 0.9.
+               <img src="cpi.png" Hspace="1" Vspace="10" alt="" style="width:100%" margin-top:10px 
+               margin-bottom:10px class="img-thumbnail">
+               <br>
+               <br>
+               The angle of attack decreases woth the distance from the center for the optimum perrformance.
+               To achieve this, the blade needs to be twisted. 
+               <img src="psi.png" Hspace="1" Vspace="10" alt="" style="width:100%" margin-top:10px 
+               margin-bottom:10px class="img-thumbnail">
+               <br>
+               <br>
+               Also the 'cord' or the thickness of the blade varies with the distance. Close to the hub the 
+               optimin blade is wider and narrows down with the distance.
+               <img src="cord.png" Hspace="1" Vspace="10" alt="" style="width:100%" margin-top:10px 
+               margin-bottom:10px class="img-thumbnail"> 
+               <br><br>
+               The results were presented Annual meetingbat Georgia Academy of Science annual meeting, 
+               University of North Georgia, April 2019.
+            </h4>
+            <hr style="height:2px;border-width:0;color:white;background-color:white">
+           
+            </div>
+            <div class="col-sm-1"></div> 
+        </div> 
+
+       
+        <div class="row">
+            <div class="col-sm-1"></div> 
+            <div class="col-sm-10">
+            <h4>
+                Used: LabView, Monte Carlo Simulations, Blade-Element Theory
+                <br>
+                Github: https://github.com/lumindak/Optimum-wind-turbine
+                <br>
+                Abstract: https://digitalcommons.gaacademy.org/gjs/vol77/iss1/115/
+            </h4>
+            <br>
+            <hr style="height:2px;border-width:0;color:white;background-color:white">
+            </div>
+            <div class="col-sm-1"></div> 
+        </div> 
+        </div>
+    </body>
+ </html>
